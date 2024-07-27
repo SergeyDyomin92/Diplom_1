@@ -1,5 +1,6 @@
 package praktikum;
 
+import constants.TestData;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -8,8 +9,8 @@ public class BunTest {
 
     @Test
     public void getBunNameIsValidTest() {
-        String expectedName = "Bun";
-        Bun bun = new Bun(expectedName, 10.0f);
+        String expectedName = TestData.TEST_NAME;
+        Bun bun = new Bun(expectedName, TestData.POSITIVE_PRICE);
         String actualName = bun.getName();
 
         assertEquals(expectedName, actualName);
@@ -17,7 +18,7 @@ public class BunTest {
 
     @Test
     public void getBunNameIsNullTest() {
-        Bun bun = new Bun(null, 10.0f);
+        Bun bun = new Bun(null, TestData.POSITIVE_PRICE);
         String actualName = bun.getName();
 
         assertNull(actualName);
@@ -25,7 +26,7 @@ public class BunTest {
 
     @Test
     public void getBunNameIsEmptyTest() {
-        Bun bun = new Bun("", 10.0f);
+        Bun bun = new Bun("", TestData.POSITIVE_PRICE);
         String actualName = bun.getName();
 
         assertEquals("", actualName);
@@ -33,8 +34,8 @@ public class BunTest {
 
     @Test
     public void getBunPriceIsValidTest() {
-        float expectedPrice = 100.0f;
-        Bun bun = new Bun("Bun", expectedPrice);
+        float expectedPrice = TestData.POSITIVE_PRICE;
+        Bun bun = new Bun(TestData.TEST_NAME, expectedPrice);
         float actualPrice = bun.getPrice();
 
         assertEquals(expectedPrice, actualPrice, 0);
@@ -42,7 +43,7 @@ public class BunTest {
 
     @Test
     public void getBunPriceIsInvalidTest() {
-        Bun bun = new Bun("Bun", -50.0f);
+        Bun bun = new Bun(TestData.TEST_NAME, TestData.NEGATIVE_PRICE);
         float actualPrice = bun.getPrice();
 
         assertTrue(actualPrice < 0);

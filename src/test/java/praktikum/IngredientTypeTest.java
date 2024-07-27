@@ -1,5 +1,6 @@
 package praktikum;
 
+import constants.TestData;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -29,6 +30,6 @@ public class IngredientTypeTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void ingredientTypeInvalidValueTest() {
-        IngredientType.valueOf("TEST");
+        IngredientType.valueOf(TestData.TEST_NAME);
     }
 }

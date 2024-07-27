@@ -82,9 +82,9 @@ public class BurgerTest {
         Mockito.when(bun.getPrice()).thenReturn(5.0f);
 
         burger.setBuns(bun);
-        float expectedBurgerPrice = burger.getPrice();
+        float actualBurgerPrice = burger.getPrice();
 
-        assertEquals(10.0, expectedBurgerPrice, 0.0);
+        assertEquals(10.0, actualBurgerPrice, 0.0);
     }
 
     @Test
@@ -95,9 +95,9 @@ public class BurgerTest {
         burger.setBuns(bun);
         Mockito.when(ingredient.getPrice()).thenReturn(20.0f);
         burger.addIngredient(ingredient);
-        float expectedBurgerPrice = burger.getPrice();
+        float actualBurgerPrice = burger.getPrice();
 
-        assertEquals(30.0, expectedBurgerPrice, 0.0);
+        assertEquals(30.0, actualBurgerPrice, 0.0);
     }
 
     @Test

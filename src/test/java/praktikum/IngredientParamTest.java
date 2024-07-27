@@ -1,5 +1,6 @@
 package praktikum;
 
+import constants.TestData;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -22,7 +23,7 @@ public class IngredientParamTest {
 
     @Test
     public void getTypeTest() {
-        IIngredient ingredient = new Ingredient(type, "NAME", 100.0f);
+        IIngredient ingredient = new Ingredient(type, TestData.TEST_NAME, TestData.POSITIVE_PRICE);
         IIngredientType actual = ingredient.getType();
         assertEquals(type, actual);
     }
